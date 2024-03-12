@@ -1,6 +1,7 @@
 //Dependencies
 const bodyParser = require('body-parser');
 const express = require('express');
+const crypto = require('crypto');
 
 
 //Express and app setup
@@ -8,13 +9,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
+
 //Database
 const storage = {}
 
 
 //Functions
 function generateSecretKey() {
-    return Math.floor(Math.random() * 1000000);
+    return crypto.randomBytes(8).toString('hex');
 }
 
 
@@ -31,11 +33,12 @@ app.get('/secrets/:secretKey', (req, res) => {
   const { secretKey } = req.params;
   const secret = storage[secretKey];
   if (!secret) {
-    return res.status(404).json({ error: 'Secret not found' });
+    res.status(404).json({ error: 'Secret not found' });
   }
   delete storage[secretKey];
   res.json(secret);
 });
+
 
 //Launching express app
 app.listen(PORT, () => {
