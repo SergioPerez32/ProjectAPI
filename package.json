@@ -1,5 +1,31 @@
 {
   "dependencies": {
-    "express": "^4.18.3"
-  }
+    "@types/express": "^4.17.21",
+    "body-parser": "^1.20.2",
+    "core-js": "^3.36.0",
+    "express": "^4.18.3",
+    "dotenv":"16.4.5"
+  },
+  "name": "projectapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergioPerez32/ProjectAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergioPerez32/ProjectAPI/issues"
+  },
+  "homepage": "https://github.com/SergioPerez32/ProjectAPI#readme",
+  "description": ""
 }
