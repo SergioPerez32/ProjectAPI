@@ -21,5 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: create config file for lint
+        run: npm init @eslint/config
+        
       - name: Run ESLint
         run: npx eslint --ext .ts .
