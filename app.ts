@@ -7,7 +7,6 @@ import { Database } from './infrastructure/database';
 require('dotenv').config()
 
 
-
 // Express and app setup
 export const app = express();
 const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
