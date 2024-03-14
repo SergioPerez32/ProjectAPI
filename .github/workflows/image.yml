@@ -1,0 +1,17 @@
+name: Docker Build Image
+
+on:
+    push:
+      branches:
+        - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t sergiorlando10@hotmail.com/testImage:latest .

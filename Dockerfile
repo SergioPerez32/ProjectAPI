@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port your app runs on
-EXPOSE 3000
+EXPOSE 4000
 
 # Command to run your app
-CMD ["npx ts-node", "app.ts"]
+CMD ["node", "dist/app.js"]
