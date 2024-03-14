@@ -13,3 +13,4 @@ export class Database {
         storage.delete(secretKey);
     }
 }
+

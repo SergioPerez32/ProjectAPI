@@ -9,7 +9,7 @@ require('dotenv').config()
 
 
 // Express and app setup
-const app = express();
+export const app = express();
 const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 app.use(bodyParser.json());
 
@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 const encodeService = new EncodeService();
 const database = new Database();
 const secretsService = new SecretService(encodeService, database);
+database.addSecret('mockedSecretKey', 'Test message')
 
 // Endpoints
 app.post('/secrets', (req: Request, res:Response) => {
