@@ -22,7 +22,7 @@ const secretsService = new SecretService(encodeService, database);
 app.post('/secrets', (req: Request, res:Response) => {
   const { message }:{message:string} = req.body;
   const secretKey = secretsService.saveSecret(message)
-  res.status(201).json({ secretKey});
+  res.status(201).json({secretKey});
 });
 
 app.get('/secrets/:secretKey', (req, res) => {

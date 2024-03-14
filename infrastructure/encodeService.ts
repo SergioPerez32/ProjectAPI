@@ -1,9 +1,8 @@
 import crypto from 'crypto';
 require('dotenv').config()
-
+const bytesSize:number= Number(process.env.BYTESSIZE);
 export class EncodeService{
     encodeKey():string {
-        const bytesSize:number= Number(process.env.BYTESSIZE);
         console.log(bytesSize);
         return crypto.randomBytes(bytesSize).toString('hex');
     }
